@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo de Solicitação AJAX</title>
+</head>
+<body>
+    <button id="meuBotao">Clique para Enviar Solicitação</button>
+    <div id="resultado"></div>
+
+    <script>
+        document.getElementById("meuBotao").addEventListener("click", function () {
+            // Faça uma solicitação AJAX para o servidor Node.js
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/app.js");
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // Exiba a resposta do servidor no elemento de resultado
+                    document.getElementById("resultado").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        });
+    </script>
+</body>
+</html>

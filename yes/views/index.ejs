@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador e Resumo de PDF</title>
+</head>
+<body>
+    <h1>Visualizador e Resumo de PDF</h1>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="pdfFile" accept=".pdf" required>
+        <button type="submit">Enviar PDF</button>
+    </form>
+
+    <h2>Texto do PDF</h2>
+    <pre><%= pdfText %></pre>
+
+    <h2>Resumo</h2>
+    <p><%= summary %></p>
+</body>
+</html>
